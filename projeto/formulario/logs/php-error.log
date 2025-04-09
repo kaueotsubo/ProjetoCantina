@@ -1,0 +1,124 @@
+[08-Apr-2025 17:47:28 Europe/Berlin] Dados do POST recebidos: Array
+(
+    [matricula] => 12345
+    [nome] => Kauê Otsubo
+    [email] => kaueotsubo07@gmail.com
+    [curso] => 2
+    [senha] => 12345
+    [confirmarSenha] => 12345
+)
+
+[08-Apr-2025 17:47:28 Europe/Berlin] Dados do FILES recebidos: Array
+(
+    [foto] => Array
+        (
+            [name] => educacao_financeira.jpg
+            [full_path] => educacao_financeira.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpC6A5.tmp
+            [error] => 0
+            [size] => 193644
+        )
+
+)
+
+[08-Apr-2025 17:47:28 Europe/Berlin] Erro PDO: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'matricula' in 'field list'
+[08-Apr-2025 17:55:17 Europe/Berlin] Dados do POST recebidos: Array
+(
+    [matricula] => 12345
+    [nome] => Kauê Otsubo
+    [email] => kaueotsubo07@gmail.com
+    [curso] => 2
+    [senha] => 12345
+    [confirmarSenha] => 12345
+)
+
+[08-Apr-2025 17:55:17 Europe/Berlin] Dados do FILES recebidos: Array
+(
+    [foto] => Array
+        (
+            [name] => educacao_financeira.jpg
+            [full_path] => educacao_financeira.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpEEF4.tmp
+            [error] => 0
+            [size] => 193644
+        )
+
+)
+
+[08-Apr-2025 17:55:17 Europe/Berlin] Erro PDO: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list'
+[08-Apr-2025 17:55:19 Europe/Berlin] Dados do POST recebidos: Array
+(
+    [matricula] => 12345
+    [nome] => Kauê Otsubo
+    [email] => kaueotsubo07@gmail.com
+    [curso] => 2
+    [senha] => 12345
+    [confirmarSenha] => 12345
+)
+
+[08-Apr-2025 17:55:19 Europe/Berlin] Dados do FILES recebidos: Array
+(
+    [foto] => Array
+        (
+            [name] => educacao_financeira.jpg
+            [full_path] => educacao_financeira.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpF8E8.tmp
+            [error] => 0
+            [size] => 193644
+        )
+
+)
+
+[08-Apr-2025 17:55:19 Europe/Berlin] Erro PDO: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'email' in 'field list'
+[08-Apr-2025 17:56:09 Europe/Berlin] Dados do POST recebidos: Array
+(
+    [matricula] => 12345
+    [nome] => Kauê Otsubo
+    [email] => kaueotsubo07@gmail.com
+    [curso] => 2
+    [senha] => 12345
+    [confirmarSenha] => 12345
+)
+
+[08-Apr-2025 17:56:09 Europe/Berlin] Dados do FILES recebidos: Array
+(
+    [foto] => Array
+        (
+            [name] => educacao_financeira.jpg
+            [full_path] => educacao_financeira.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\phpB9E7.tmp
+            [error] => 0
+            [size] => 193644
+        )
+
+)
+
+[08-Apr-2025 17:56:09 Europe/Berlin] Erro PDO: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'senha' in 'field list'
+[08-Apr-2025 17:56:44 Europe/Berlin] Dados do POST recebidos: Array
+(
+    [matricula] => 12345
+    [nome] => Kauê Otsubo
+    [email] => kaueotsubo07@gmail.com
+    [curso] => 2
+    [senha] => 12345
+    [confirmarSenha] => 12345
+)
+
+[08-Apr-2025 17:56:44 Europe/Berlin] Dados do FILES recebidos: Array
+(
+    [foto] => Array
+        (
+            [name] => educacao_financeira.jpg
+            [full_path] => educacao_financeira.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php4252.tmp
+            [error] => 0
+            [size] => 193644
+        )
+
+)
+

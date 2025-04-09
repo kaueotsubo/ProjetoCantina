@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WAAR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-4">Login</h2>
+                        <form id="loginForm">
+                            <div class="mb-3" id="loginField">
+                                <label for="email" class="form-label" id="loginLabel">Email</label>
+                                <input type="text" class="form-control" id="email" name="email" required placeholder="Digite seu email" data-discente-placeholder="Digite sua matrícula">
+                            </div>
+                            <div class="mb-3">
+                                <label for="senha" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="senha" name="senha" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipo" class="form-label">Tipo de Usuário</label>
+                                <select class="form-select" id="tipo" name="tipo" required>
+                                    <option value="">Selecione o tipo de usuário</option>
+                                    <option value="discente">Aluno</option>
+                                    <option value="fiscal">Fiscal</option>
+                                    <option value="departamento">Departamento</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Não tem uma conta? <a href="register.html">Registre-se</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função para atualizar o campo de login baseado no tipo de usuário
+        function updateLoginField() {
+            const userType = document.getElementById('tipo').value;
+            const loginLabel = document.getElementById('loginLabel');
+            const loginInput = document.getElementById('email');
+            
+            if (userType === 'discente') {
+                loginLabel.textContent = 'Matrícula';
+                loginInput.placeholder = loginInput.dataset.discentePlaceholder;
+            } else {
+                loginLabel.textContent = 'Email';
+                loginInput.placeholder = 'Digite seu email';
+            }
+        }
+
+        // Adicionar listener para mudança no tipo de usuário
+        document.getElementById('tipo').addEventListener('change', updateLoginField);
+
+        // Inicializar o campo de login
+        updateLoginField();
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const userType = document.getElementById('tipo').value;
+            const loginValue = document.getElementById('email').value;
+            
+            const formData = {
+                identifier: loginValue,
+                senha: document.getElementById('senha').value,
+                tipo: userType
+            };
+
+            try {
+                const response = await fetch('api/login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Store user data in localStorage
+                    localStorage.setItem('userToken', data.token);
+                    localStorage.setItem('userType', data.tipo);
+                    localStorage.setItem('userName', data.nome);
+
+                    // Redirect based on user type
+                    switch (data.tipo) {
+                        case 'discente':
+                            window.location.href = 'dashboard_discente.html';
+                            break;
+                        case 'departamento':
+                            window.location.href = 'dashboard_departamento.html';
+                            break;
+                        case 'fiscal':
+                            window.location.href = 'dashboard_fiscal.html';
+                            break;
+                        default:
+                            alert('Tipo de usuário não reconhecido');
+                            break;
+                    }
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('Erro ao processar o login. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>
